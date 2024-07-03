@@ -5,7 +5,8 @@ metadata:
   namespace: argocd
 spec:
   source:
-    path: manifests
+    # path: manifests
+    path: mail/mailhog
     repoURL: "https://github.com/Blackboxops1/kubernetes-service-catalog"
     targetRevision: main
   destination:
