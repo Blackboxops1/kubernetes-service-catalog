@@ -6,7 +6,7 @@ metadata:
 spec:
   source:
     # path: manifests
-    path: mail/mailhog
+    path: networking/ingress-nginx
     repoURL: "https://github.com/Blackboxops1/kubernetes-service-catalog"
     targetRevision: main
   destination:
