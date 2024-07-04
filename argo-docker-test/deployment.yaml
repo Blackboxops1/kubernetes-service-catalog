@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: superset-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: superset
   template:
     metadata:
       labels:
-        app: nginx
+        app: superset
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.19.0
+      - name: superset
+        image: probablymir/superset:1.0
         ports:
         - containerPort: 80
