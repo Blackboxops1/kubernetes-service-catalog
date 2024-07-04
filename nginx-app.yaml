@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: "https://github.com/Blackboxops1/kubernetes-service-catalog"
     targetRevision: main
-    path: nginx
+    path: manifests
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx-test
