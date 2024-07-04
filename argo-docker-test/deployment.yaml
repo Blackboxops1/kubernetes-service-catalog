@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: superset
-        image: probablymir/superset:1.0
+        image: probablymir/superset
         imagePullPolicy: Always
         ports:
         - containerPort: 80
