@@ -1,7 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+images:
+  - name: superset-deployment
 resources:
   - deployment.yaml
-images:
-  - name: probablymir/superset
-    newTag: 1.0
