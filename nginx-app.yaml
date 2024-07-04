@@ -4,18 +4,18 @@ metadata:
   name: docker-test-argo
   namespace: argocd
   annotations:
-    # argocd-image-updater.argoproj.io/image-list: nginx=nginx
     argocd-image-updater.argoproj.io/image-list: argocd/test:~1.0
     argocd-image-updater.argoproj.io/pullsecret: argocd/mycontainerregistry-secret
-    argocd-image-updater.argoproj.io/update-strategy: latest
+    argocd-image-updater.argoproj.io/update-strategy: semver
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/git-branch: main
 spec:
   project: default
   source:
     repoURL: "https://github.com/Blackboxops1/kubernetes-service-catalog"
-    targetRevision: main
+    targetRevision: argo-docker-test
     path: manifests
+    kustomize: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx-test
