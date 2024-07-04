@@ -21,8 +21,7 @@ spec:
     repoURL: "https://github.com/Blackboxops1/kubernetes-service-catalog"
     targetRevision: main
     path: argo-docker-test
-    kustomize:
-      version: v4.1.0
+    kustomize: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: superset-test
