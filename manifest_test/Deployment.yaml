@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
-  labels:
-    app: my-app
+  name: superset-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: superset
   template:
     metadata:
       labels:
-        app: my-app
+        app: superset
     spec:
       containers:
-        - name: my-app
-          image: probablymir/superset:v1.0
-          ports:
-            - containerPort: 8080
+      - name: superset
+        image: probablymir/superset:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: regcred

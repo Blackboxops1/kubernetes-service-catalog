@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: atlas-argocd-demo
+  name: test-argocd-demo
   namespace: argocd
 spec:
   source:
-    # path: manifests
-    path: networking/ingress-nginx
+    # path: argo-docker-test
+    path: manifest_test
     repoURL: "https://github.com/Blackboxops1/kubernetes-service-catalog"
     targetRevision: main
   destination:
-    namespace: kube-argo-test
+    namespace: argocd
     server: "https://kubernetes.default.svc"
   project: default
   syncPolicy:
