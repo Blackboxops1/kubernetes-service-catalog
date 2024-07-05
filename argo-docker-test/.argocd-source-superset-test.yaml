@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - probablymir/superset:1.2
