@@ -4,11 +4,11 @@ metadata:
   name: superset-test
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: probablymir/superset:1.0
-    argocd-image-updater.argoproj.io/pullsecret: argocd/mycontainerregistry-secret
-    argocd-image-updater.argoproj.io/update-strategy: semver
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/image-list: probablymir/superset:*
+    argocd-image-updater.argoproj.io/pullsecret: argocd/regcred
+    argocd-image-updater.argoproj.io/update-strategy: latest
     argocd-image-updater.argoproj.io/git-branch: main
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
   # annotations:
   #   argocd-image-updater.argoproj.io/image-list: argocd/test:~1.0
   #   argocd-image-updater.argoproj.io/pullsecret: argocd/mycontainerregistry-secret
@@ -21,7 +21,6 @@ spec:
     repoURL: "https://github.com/Blackboxops1/kubernetes-service-catalog"
     targetRevision: main
     path: argo-docker-test
-    kustomize: {}
   destination:
     server: https://kubernetes.default.svc
-    namespace: superset-test
+    namespace: argocd
