@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: k6
+  name: k6-operator
   namespace: argocd
 spec:
   source:
     # path: argo-docker-test
-    path: charts/grafana
+    path: charts/k6-operator
     repoURL: "https://github.com/Blackboxops1/kubernetes-service-catalog"
     targetRevision: main
   destination:
